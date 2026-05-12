@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 
 @SpringBootApplication
+@StyleSheet("Aura.STYLESHEET")
 @StyleSheet("styles.css")
 public class DemoApplication implements AppShellConfigurator {
 
