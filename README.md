@@ -1,3 +1,10 @@
+# 100-days-of-code
+
+
+
+### Environment Variables:
+
+```aiignore
 vaadin.launch-browser=true
 spring.application.name=demo
 
@@ -11,11 +18,13 @@ spring.jpa.show-sql=true
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
 
-app.admin.username=admin
-app.admin.password=admin
-app.admin.email=rayleigh1423@gmail.com
+app.admin.username=username
+app.admin.password=password
+app.admin.email=your-email@example.com
 
 logging.level.org.springframework=INFO
 logging.level.com.example.demo=DEBUG
 spring.web.error.include-message=always
 spring.web.error.include-binding-errors=always
+
+```

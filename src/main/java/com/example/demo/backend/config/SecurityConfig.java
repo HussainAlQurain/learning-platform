@@ -1,5 +1,6 @@
-package com.example.demo.backend;
+package com.example.demo.backend.config;
 
+import com.example.demo.views.LoginView;
 import com.vaadin.flow.spring.security.VaadinSecurityConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,15 +16,22 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.with(VaadinSecurityConfigurer.vaadin(), configurer -> {
+        // 1. Permit all requests to the H2-Console
+        http.authorizeHttpRequests(auth -> auth.requestMatchers("/h2-console/**").hasRole("ADMIN"));
 
+        http.csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**"));
+
+        http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
+        // 2. Enable Vaadin's Spring Security integration'
+        http.with(VaadinSecurityConfigurer.vaadin(), configurer -> {
+            configurer.loginView(LoginView.class);
         });
         return http.build();
     }
 
     @Bean
     PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(12);
     }
 
 }
