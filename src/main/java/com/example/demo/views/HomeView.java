@@ -16,10 +16,5 @@ public class HomeView extends VerticalLayout {
 
     public HomeView() {
         add(new H1("Welcome to your new application"));
-        var nameField = new TextField("What is your name?");
-        add(nameField);
-        Paragraph paragraph = new Paragraph();
-        add(paragraph);
-        add(new Button("Say Hello", event -> paragraph.setText("Hello " + nameField.getValue())));
     }
 }
