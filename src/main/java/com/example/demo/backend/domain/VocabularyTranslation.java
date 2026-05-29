@@ -20,8 +20,11 @@ public class VocabularyTranslation {
     private String languageCode;
     private String word;
     private String translation;
+    @Column(columnDefinition = "TEXT")
     private String exampleSentence;
     private String partOfSpeech;
     private String ipaTranscription;
+    private String audioUrl;
+    private String imageUrl;
 
 }

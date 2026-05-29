@@ -33,4 +33,14 @@ public class Account {
     public enum Role {
         ADMIN, USER
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", roles=" + roles +
+                '}';
+    }
 }

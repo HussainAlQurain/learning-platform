@@ -59,4 +59,11 @@ public class AccountUserDetails implements UserDetails {
     public String getUsername() {
         return account.getUsername();
     }
+
+    @Override
+    public String toString() {
+        return "AccountUserDetails{" +
+                "account=" + account +
+                '}';
+    }
 }
